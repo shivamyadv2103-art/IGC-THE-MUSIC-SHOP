@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>IGC The Music Shop – Kalwa, Thane</title>
+<meta name="description" content="IGC The Music Shop – Musical instruments, microphones, karaoke systems & more in Kalwa, Thane. Visit us at Sudama Nagar, Manisha Nagar."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Exo+2:wght@300;400;600;700;900&family=Chakra+Petch:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --neon-purple: #b44fff;
+    --neon-blue: #00d4ff;
+    --neon-pink: #ff2d78;
+    --dark-bg: #060610;
+    --dark-card: #0d0d22;
+    --dark-card2: #0a0a1a;
+    --text-main: #e8e8ff;
+    --text-muted: #7a7aaa;
+    --accent: #ff6b35;
+    --glow-purple: 0 0 20px rgba(180,79,255,0.6);
+    --glow-blue: 0 0 20px rgba(0,212,255,0.6);
+    --glow-pink: 0 0 20px rgba(255,45,120,0.5);
+    --font-display: 'Bebas Neue', sans-serif;
+    --font-body: 'Exo 2', sans-serif;
+    --font-accent: 'Chakra Petch', sans-serif;
+  }
+  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--dark-bg);
+    color: var(--text-main);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+  }
+  ::selection { background: var(--neon-purple); color: #fff; }
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--dark-bg); }
+  ::-webkit-scrollbar-thumb { background: var(--neon-purple); border-radius: 3px; }
+
+  /* ── NAV ─────────────────────────────────────── */
+  nav {
+    position: fixed; top:0; left:0; right:0; z-index:1000;
+    padding: 0 5%;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 70px;
+    background: rgba(6,6,16,0.85);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(180,79,255,0.2);
+    transition: all .3s;
+  }
+  .nav-logo {
+    font-family: var(--font-display);
+    font-size: 1.7rem;
+    letter-spacing: 2px;
+    background: linear-gradient(135deg, var(--neon-purple), var(--neon-blue));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .nav-logo span { color: var(--neon-pink); -webkit-text-fill-color: var(--neon-pink); }
+  .nav-links { display: flex; gap: 28px; list-style: none; }
+  .nav-links a {
+    font-family: var(--font-accent); font-size: .82rem; letter-spacing: 1.5px;
+    color: var(--text-muted); text-decoration: none; text-transform: uppercase;
+    transition: color .2s;
+  }
+  .nav-links a:hover { color: var(--neon-blue); text-shadow: var(--glow-blue); }
+  .nav-cta {
+    font-family: var(--font-accent); font-size: .8rem; letter-spacing: 1px;
+    padding: 9px 22px; border-radius: 4px;
+    background: linear-gradient(135deg, var(--neon-purple), var(--neon-pink));
+    color: #fff; text-decoration: none; border: none; cursor: pointer;
+    transition: transform .2s, box-shadow .2s;
+  }
+  .nav-cta:hover { transform: translateY(-2px); box-shadow: var(--glow-purple); }
+  .hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; }
+  .hamburger span { width:24px; height:2px; background:var(--neon-blue); border-radius:2px; transition: .3s; }
+  .mobile-nav {
+    display:none; flex-direction:column; gap:0;
+    position:fixed; top:70px; left:0; right:0; z-index:999;
+    background:rgba(6,6,16,0.97); backdrop-filter:blur(20px);
+    border-bottom:1px solid rgba(180,79,255,0.2);
+    padding:20px 0;
+  }
+  .mobile-nav a {
+    font-family:var(--font-accent); font-size:.85rem; letter-spacing:1.5px;
+    color:var(--text-muted); text-decoration:none; text-transform:uppercase;
+    padding:14px 8%;
+    border-bottom:1px solid rgba(255,255,255,0.05);
+    transition:color .2s;
+  }
+  .mobile-nav a:hover { color:var(--neon-blue); }
+  .mobile-nav.open { display:flex; }
+
+  /* ── HERO ────────────────────────────────────── */
+  #home {
+    min-height: 100vh;
+    display: flex; align-items: center;
+    position: relative; overflow: hidden;
+    padding: 100px 5% 60px;
+  }
+  .hero-bg {
+    position:absolute; inset:0; z-index:0;
+    background: radial-gradient(ellipse 80% 60% at 60% 40%, rgba(180,79,255,0.18) 0%, transparent 60%),
+                radial-gradient(ellipse 60% 40% at 20% 70%, rgba(0,212,255,0.12) 0%, transparent 50%),
+                var(--dark-bg);
+  }
+  .hero-grid {
+    position:absolute; inset:0; z-index:0;
+    background-image:
+      linear-gradient(rgba(180,79,255,0.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(180,79,255,0.07) 1px, transparent 1px);
+    background-size:60px 60px;
+    animation: gridDrift 20s linear infinite;
+  }
+  @keyframes gridDrift { from{transform:translateY(0)} to{transform:translateY(60px)} }
+  .hero-content { position:relative; z-index:1; max-width:640px; }
+  .hero-badge {
+    display:inline-flex; align-items:center; gap:8px;
+    font-family:var(--font-accent); font-size:.72rem; letter-spacing:2px;
+    color:var(--neon-blue); text-transform:uppercase;
+    border:1px solid rgba(0,212,255,0.3); border-radius:4px;
+    padding:6px 14px; margin-bottom:24px;
+    animation: fadeUp .8s ease both;
+  }
+  .hero-badge::before { content:'●'; animation: pulse 1.5s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.3} }
+  .hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(3.5rem,8vw,7rem);
+    line-height: .95;
+    letter-spacing: 3px;
+    animation: fadeUp .8s .15s ease both;
+  }
+  .hero-title .line1 { display:block; color: var(--text-main); }
+  .hero-title .line2 {
+    display:block;
+    background: linear-gradient(90deg, var(--neon-purple), var(--neon-blue), var(--neon-pink));
+    background-size:200%;
+    -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+    animation: fadeUp .8s .15s ease both, shimmer 4s linear infinite;
+  }
+  @keyframes shimmer { from{background-position:0%} to{background-position:200%} }
+  .hero-sub {
+    font-size:1.05rem; color:var(--text-muted); line-height:1.7;
+    margin:20px 0 36px; font-weight:300;
+    animation: fadeUp .8s .3s ease both;
+  }
+  .hero-sub strong { color:var(--neon-blue); font-weight:600; }
+  .hero-btns { display:flex; gap:16px; flex-wrap:wrap; animation:fadeUp .8s .45s ease both; }
+  .btn-primary {
+    font-family:var(--font-accent); font-size:.85rem; letter-spacing:1px;
+    padding:14px 32px; border-radius:4px;
+    background:linear-gradient(135deg,var(--neon-purple),var(--neon-blue));
+    color:#fff; text-decoration:none; border:none; cursor:pointer;
+    transition:transform .2s, box-shadow .2s;
+  }
+  .btn-primary:hover { transform:translateY(-3px); box-shadow:var(--glow-purple); }
+  .btn-outline {
+    font-family:var(--font-accent); font-size:.85rem; letter-spacing:1px;
+    padding:13px 28px; border-radius:4px;
+    border:1px solid rgba(0,212,255,0.4); color:var(--neon-blue);
+    text-decoration:none; background:transparent;
+    transition:all .2s; cursor:pointer;
+  }
+  .btn-outline:hover { background:rgba(0,212,255,0.1); box-shadow:var(--glow-blue); }
+  .hero-visual {
+    position:absolute; right:-5%; top:50%; transform:translateY(-50%);
+    z-index:1; width:min(500px,48%);
+    animation: floatY 5s ease-in-out infinite;
+    opacity:.85;
+  }
+  @keyframes floatY { 0%,100%{transform:translateY(-50%) translateY(0)} 50%{transform:translateY(-50%) translateY(-18px)} }
+  .hero-stats {
+    display:flex; gap:40px; margin-top:40px;
+    animation: fadeUp .8s .6s ease both;
+  }
+  .stat-item { text-align:left; }
+  .stat-num { font-family:var(--font-display); font-size:2rem; color:var(--neon-purple); line-height:1; }
+  .stat-label { font-size:.72rem; color:var(--text-muted); letter-spacing:1.5px; text-transform:uppercase; margin-top:4px; }
+  @keyframes fadeUp { from{opacity:0;transform:translateY(28px)} to{opacity:1;transform:translateY(0)} }
+
+  /* ── SECTIONS SHARED ──────────────────────────── */
+  section { padding: 80px 5%; }
+  .section-tag {
+    font-family:var(--font-accent); font-size:.72rem; letter-spacing:3px;
+    text-transform:uppercase; color:var(--neon-blue);
+    margin-bottom:12px;
+  }
+  .section-title {
+    font-family:var(--font-display); font-size:clamp(2rem,5vw,3.5rem);
+    letter-spacing:2px; line-height:1.05;
+    margin-bottom:16px;
+  }
+  .section-title .highlight {
+    background:linear-gradient(90deg,var(--neon-purple),var(--neon-pink));
+    -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+  }
+  .section-desc { color:var(--text-muted); max-width:540px; line-height:1.7; font-size:.95rem; }
+  .section-head { margin-bottom:50px; }
+  .divider {
+    width:60px; height:3px;
+    background:linear-gradient(90deg,var(--neon-purple),var(--neon-blue));
+    border-radius:2px; margin:16px 0;
+  }
+
+  /* ── TICKER ──────────────────────────────────── */
+  .ticker-wrap {
+    background:rgba(180,79,255,0.08);
+    border-top:1px solid rgba(180,79,255,0.2);
+    border-bottom:1px solid rgba(180,79,255,0.2);
+    overflow:hidden; padding:14px 0;
+  }
+  .ticker {
+    display:flex; gap:0; white-space:nowrap;
+    animation: tickerScroll 20s linear infinite;
+  }
+  .ticker span {
+    font-family:var(--font-accent); font-size:.78rem; letter-spacing:2px;
+    text-transform:uppercase; color:var(--text-muted);
+    padding:0 30px;
+  }
+  .ticker span.sep { color:var(--neon-purple); }
+  @keyframes tickerScroll { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+  /* ── PRODUCTS ────────────────────────────────── */
+  #products { background:var(--dark-card2); }
+  .cat-filters {
+    display:flex; gap:10px; flex-wrap:wrap; margin-bottom:40px;
+  }
+  .cat-btn {
+    font-family:var(--font-accent); font-size:.76rem; letter-spacing:1.5px;
+    text-transform:uppercase; padding:8px 20px; border-radius:3px;
+    border:1px solid rgba(180,79,255,0.25); color:var(--text-muted);
+    background:transparent; cursor:pointer; transition:all .2s;
+  }
+  .cat-btn:hover, .cat-btn.active {
+    background:rgba(180,79,255,0.15); color:var(--neon-purple);
+    border-color:var(--neon-purple); box-shadow:var(--glow-purple);
+  }
+  .products-grid {
+    display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
+    gap:22px;
+  }
+  .product-card {
+    background:var(--dark-card); border-radius:8px;
+    border:1px solid rgba(180,79,255,0.12);
+    overflow:hidden; transition:transform .25s, box-shadow .25s;
+    cursor:pointer;
+    display:none;
+  }
+  .product-card.visible { display:block; }
+  .product-card:hover { transform:translateY(-6px); box-shadow:0 12px 40px rgba(180,79,255,0.2); }
+  .product-img {
+    height:180px; display:flex; align-items:center; justify-content:center;
+    font-size:4rem; position:relative; overflow:hidden;
+    background:linear-gradient(135deg,rgba(180,79,255,0.1),rgba(0,212,255,0.07));
+  }
+  .product-img::after {
+    content:''; position:absolute; inset:0;
+    background:linear-gradient(to bottom,transparent 60%,var(--dark-card));
+  }
+  .product-badge {
+    position:absolute; top:10px; right:10px; z-index:1;
+    font-family:var(--font-accent); font-size:.65rem; letter-spacing:1px;
+    padding:3px 10px; border-radius:2px;
+    background:linear-gradient(135deg,var(--neon-purple),var(--neon-pink));
+    color:#fff;
+  }
+  .product-info { padding:18px; }
+  .product-name { font-family:var(--font-accent); font-size:.95rem; font-weight:600; margin-bottom:6px; }
+  .product-desc { font-size:.8rem; color:var(--text-muted); line-height:1.5; margin-bottom:14px; }
+  .product-footer { display:flex; align-items:center; justify-content:space-between; }
+  .product-price { font-family:var(--font-display); font-size:1.3rem; color:var(--neon-blue); }
+  .product-price small { font-size:.6rem; color:var(--text-muted); font-family:var(--font-body); }
+  .btn-cart {
+    font-family:var(--font-accent); font-size:.7rem; letter-spacing:1px;
+    padding:7px 16px; border-radius:3px;
+    background:linear-gradient(135deg,var(--neon-purple),var(--neon-blue));
+    color:#fff; border:none; cursor:pointer; transition:transform .15s;
+  }
+  .btn-cart:hover { transform:scale(1.05); }
+
+  /* ── ABOUT ───────────────────────────────────── */
+  #about {
+    display:grid; grid-template-columns:1fr 1fr; gap:80px;
+    align-items:center;
+  }
+  .about-visual {
+    position:relative;
+  }
+  .about-big-icon {
+    font-size:12rem; line-height:1;
+    opacity:.12; position:absolute;
+    top:50%; left:50%; transform:translate(-50%,-50%);
+    animation: floatY 6s ease-in-out infinite;
+  }
+  .about-cards-grid {
+    display:grid; grid-template-columns:1fr 1fr; gap:16px;
+    position:relative; z-index:1;
+  }
+  .about-card {
+    background:var(--dark-card);
+    border:1px solid rgba(180,79,255,0.15); border-radius:8px;
+    padding:22px 18px; text-align:center;
+  }
+  .about-card-icon { font-size:2rem; margin-bottom:10px; }
+  .about-card-title { font-family:var(--font-accent); font-size:.82rem; color:var(--neon-blue); letter-spacing:1px; }
+  .about-card-text { font-size:.78rem; color:var(--text-muted); margin-top:6px; line-height:1.5; }
+  .about-text p { color:var(--text-muted); line-height:1.8; margin-bottom:16px; font-size:.95rem; }
+  .about-text p strong { color:var(--neon-purple); }
+
+  /* ── SERVICES ────────────────────────────────── */
+  #services { background:var(--dark-card2); }
+  .services-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:22px; }
+  .service-card {
+    background:var(--dark-card); border-radius:8px;
+    border:1px solid rgba(0,212,255,0.12); padding:32px 24px;
+    transition:transform .25s, border-color .25s;
+  }
+  .service-card:hover { transform:translateY(-6px); border-color:var(--neon-blue); box-shadow:var(--glow-blue); }
+  .service-icon { font-size:2.5rem; margin-bottom:16px; display:block; }
+  .service-title { font-family:var(--font-accent); font-size:.95rem; color:var(--text-main); margin-bottom:10px; }
+  .service-desc { font-size:.82rem; color:var(--text-muted); line-height:1.6; }
+
+  /* ── REVIEWS ──────────────────────────────────── */
+  .reviews-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:22px; }
+  .review-card {
+    background:var(--dark-card); border-radius:8px;
+    border:1px solid rgba(180,79,255,0.12); padding:28px;
+    transition:transform .25s;
+  }
+  .review-card:hover { transform:translateY(-4px); }
+  .review-stars { color:#ffd700; font-size:1rem; letter-spacing:3px; margin-bottom:12px; }
+  .review-text { font-size:.9rem; color:var(--text-muted); line-height:1.7; margin-bottom:16px; font-style:italic; }
+  .review-author { font-family:var(--font-accent); font-size:.78rem; color:var(--neon-purple); letter-spacing:1px; }
+
+  /* ── GALLERY ─────────────────────────────────── */
+  #gallery { background:var(--dark-card2); }
+  .gallery-grid {
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    grid-template-rows:repeat(2,200px);
+    gap:12px;
+  }
+  .gallery-item {
+    border-radius:6px; overflow:hidden; cursor:pointer;
+    position:relative;
+    display:flex; align-items:center; justify-content:center;
+    font-size:5rem;
+    background:linear-gradient(135deg,rgba(180,79,255,0.12),rgba(0,212,255,0.08));
+    border:1px solid rgba(180,79,255,0.1);
+    transition:transform .25s;
+  }
+  .gallery-item:hover { transform:scale(1.03); z-index:2; }
+  .gallery-item:first-child { grid-row:span 2; font-size:8rem; }
+  .gallery-item .caption {
+    position:absolute; bottom:0; left:0; right:0;
+    padding:12px 14px;
+    background:linear-gradient(transparent,rgba(6,6,16,.9));
+    font-family:var(--font-accent); font-size:.72rem;
+    letter-spacing:1px; color:var(--text-muted); text-transform:uppercase;
+  }
+
+  /* ── CONTACT ─────────────────────────────────── */
+  .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:start; }
+  .contact-info-item {
+    display:flex; gap:16px; align-items:flex-start; margin-bottom:24px;
+  }
+  .contact-icon {
+    width:44px; height:44px; border-radius:6px;
+    background:rgba(180,79,255,0.12); border:1px solid rgba(180,79,255,0.2);
+    display:flex; align-items:center; justify-content:center;
+    font-size:1.2rem; flex-shrink:0;
+  }
+  .contact-label { font-family:var(--font-accent); font-size:.72rem; color:var(--text-muted); letter-spacing:1px; text-transform:uppercase; }
+  .contact-val { font-size:.95rem; color:var(--text-main); margin-top:3px; }
+  .contact-form { display:flex; flex-direction:column; gap:14px; }
+  .form-row { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+  .form-field {
+    display:flex; flex-direction:column; gap:6px;
+  }
+  .form-field label { font-family:var(--font-accent); font-size:.72rem; letter-spacing:1px; color:var(--text-muted); text-transform:uppercase; }
+  .form-field input, .form-field textarea, .form-field select {
+    background:var(--dark-card); border:1px solid rgba(180,79,255,0.2);
+    border-radius:4px; padding:12px 14px;
+    color:var(--text-main); font-family:var(--font-body); font-size:.9rem;
+    outline:none; transition:border-color .2s;
+  }
+  .form-field input:focus, .form-field textarea:focus, .form-field select:focus { border-color:var(--neon-purple); }
+  .form-field textarea { resize:vertical; min-height:110px; }
+  .form-field select option { background:var(--dark-card); }
+  .btn-submit {
+    font-family:var(--font-accent); font-size:.85rem; letter-spacing:1px;
+    padding:14px; border-radius:4px; border:none; cursor:pointer;
+    background:linear-gradient(135deg,var(--neon-purple),var(--neon-pink));
+    color:#fff; transition:transform .2s, box-shadow .2s;
+  }
+  .btn-submit:hover { transform:translateY(-2px); box-shadow:var(--glow-purple); }
+  .map-box {
+    margin-top:30px; border-radius:8px; overflow:hidden;
+    border:1px solid rgba(180,79,255,0.2); height:200px;
+    background:var(--dark-card);
+    display:flex; align-items:center; justify-content:center;
+    flex-direction:column; gap:10px;
+  }
+  .map-box iframe { width:100%; height:100%; border:none; filter:invert(1) hue-rotate(180deg); }
+
+  /* ── WHATSAPP FLOAT ───────────────────────────── */
+  .wa-float {
+    position:fixed; bottom:28px; right:28px; z-index:999;
+    width:58px; height:58px; border-radius:50%;
+    background:linear-gradient(135deg,#25d366,#128c7e);
+    display:flex; align-items:center; justify-content:center;
+    text-decoration:none; font-size:1.7rem; color:#fff;
+    box-shadow:0 4px 20px rgba(37,211,102,.5);
+    animation: waPulse 2s ease-in-out infinite;
+    transition:transform .2s;
+  }
+  .wa-float:hover { transform:scale(1.1); }
+  @keyframes waPulse {
+    0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.5),0 0 0 0 rgba(37,211,102,.4)}
+    50%{box-shadow:0 4px 20px rgba(37,211,102,.5),0 0 0 14px rgba(37,211,102,0)}
+  }
+  .wa-tooltip {
+    position:absolute; right:68px; top:50%; transform:translateY(-50%);
+    background:var(--dark-card); border:1px solid rgba(37,211,102,.3);
+    border-radius:4px; padding:6px 12px; white-space:nowrap;
+    font-family:var(--font-accent); font-size:.72rem; letter-spacing:1px; color:#25d366;
+    opacity:0; pointer-events:none; transition:opacity .2s;
+  }
+  .wa-float:hover .wa-tooltip { opacity:1; }
+
+  /* ── FOOTER ──────────────────────────────────── */
+  footer {
+    background:var(--dark-card2);
+    border-top:1px solid rgba(180,79,255,0.15);
+    padding:60px 5% 30px;
+  }
+  .footer-grid { display:grid; grid-template-columns:2fr 1fr 1fr; gap:60px; margin-bottom:40px; }
+  .footer-brand .footer-logo { font-family:var(--font-display); font-size:1.8rem; letter-spacing:2px; margin-bottom:14px; }
+  .footer-brand .footer-logo span { color:var(--neon-purple); }
+  .footer-brand p { font-size:.85rem; color:var(--text-muted); line-height:1.7; max-width:300px; }
+  .footer-social { display:flex; gap:12px; margin-top:20px; }
+  .social-btn {
+    width:38px; height:38px; border-radius:6px;
+    background:rgba(180,79,255,0.1); border:1px solid rgba(180,79,255,0.2);
+    display:flex; align-items:center; justify-content:center;
+    font-size:1.1rem; text-decoration:none; color:var(--text-muted);
+    transition:all .2s;
+  }
+  .social-btn:hover { background:rgba(180,79,255,0.2); color:var(--neon-purple); box-shadow:var(--glow-purple); }
+  .footer-col h4 { font-family:var(--font-accent); font-size:.8rem; letter-spacing:2px; color:var(--neon-blue); text-transform:uppercase; margin-bottom:18px; }
+  .footer-col ul { list-style:none; }
+  .footer-col ul li { margin-bottom:10px; }
+  .footer-col ul li a { font-size:.85rem; color:var(--text-muted); text-decoration:none; transition:color .2s; }
+  .footer-col ul li a:hover { color:var(--neon-blue); }
+  .footer-hours li { font-size:.85rem; color:var(--text-muted); margin-bottom:8px; display:flex; justify-content:space-between; gap:20px; }
+  .footer-hours li span:last-child { color:var(--text-main); }
+  .footer-bottom {
+    border-top:1px solid rgba(255,255,255,0.05);
+    padding-top:24px; display:flex; align-items:center; justify-content:space-between;
+    gap:20px; flex-wrap:wrap;
+  }
+  .footer-bottom p { font-size:.78rem; color:var(--text-muted); }
+  .footer-bottom .pay-methods { display:flex; gap:10px; align-items:center; }
+  .pay-chip {
+    font-family:var(--font-accent); font-size:.65rem; letter-spacing:1px;
+    padding:4px 10px; border-radius:3px;
+    background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1);
+    color:var(--text-muted);
+  }
+
+  /* ── TOAST ───────────────────────────────────── */
+  .toast {
+    position:fixed; bottom:100px; right:28px; z-index:2000;
+    background:var(--dark-card); border:1px solid rgba(180,79,255,0.3);
+    border-radius:6px; padding:14px 22px;
+    font-family:var(--font-accent); font-size:.8rem; color:var(--text-main);
+    box-shadow:var(--glow-purple);
+    transform:translateY(20px); opacity:0;
+    transition:all .3s;
+  }
+  .toast.show { transform:translateY(0); opacity:1; }
+
+  /* ── RESPONSIVE ──────────────────────────────── */
+  @media(max-width:900px) {
+    #home { padding:120px 5% 60px; }
+    .hero-visual { display:none; }
+    #about { grid-template-columns:1fr; gap:40px; }
+    .about-visual { display:none; }
+    .contact-grid { grid-template-columns:1fr; }
+    .footer-grid { grid-template-columns:1fr 1fr; }
+    .gallery-grid { grid-template-columns:1fr 1fr; grid-template-rows:auto; }
+    .gallery-item:first-child { grid-row:span 1; }
+  }
+  @media(max-width:640px) {
+    nav .nav-links, nav .nav-cta { display:none; }
+    .hamburger { display:flex; }
+    .hero-stats { gap:20px; }
+    .form-row { grid-template-columns:1fr; }
+    .footer-grid { grid-template-columns:1fr; gap:32px; }
+    .gallery-grid { grid-template-columns:1fr; grid-template-rows:auto; }
+  }
+
+  /* ── SCROLL REVEAL ───────────────────────────── */
+  .reveal { opacity:0; transform:translateY(30px); transition:opacity .6s, transform .6s; }
+  .reveal.visible { opacity:1; transform:translateY(0); }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-logo">IGC <span>🎵</span> MUSIC</div>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#products">Products</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="https://wa.me/918425932304" class="nav-cta" target="_blank">WhatsApp Order</a>
+  <div class="hamburger" onclick="toggleMobileNav()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobileNav">
+  <a href="#home" onclick="closeMobileNav()">Home</a>
+  <a href="#products" onclick="closeMobileNav()">Products</a>
+  <a href="#about" onclick="closeMobileNav()">About</a>
+  <a href="#services" onclick="closeMobileNav()">Services</a>
+  <a href="#gallery" onclick="closeMobileNav()">Gallery</a>
+  <a href="#reviews" onclick="closeMobileNav()">Reviews</a>
+  <a href="#contact" onclick="closeMobileNav()">Contact</a>
+</div>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-badge">Kalwa, Thane &bull; Est. Since Years</div>
+    <h1 class="hero-title">
+      <span class="line1">FEEL THE</span>
+      <span class="line2">MUSIC</span>
+    </h1>
+    <p class="hero-sub">Discover your sound at <strong>IGC The Music Shop</strong>. Guitars, keyboards, drums, microphones & professional audio equipment — all under one roof in Kalwa, Thane.</p>
+    <div class="hero-btns">
+      <a href="#products" class="btn-primary">🎸 Browse Instruments</a>
+      <a href="#contact" class="btn-outline">📍 Visit Store</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">500+</div>
+        <div class="stat-label">Products</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">1000+</div>
+        <div class="stat-label">Happy Customers</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">10+</div>
+        <div class="stat-label">Brands</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-visual" aria-hidden="true">
+    <svg viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg" style="width:100%;filter:drop-shadow(0 0 40px rgba(180,79,255,.4))">
+      <defs>
+        <linearGradient id="gg" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#b44fff"/>
+          <stop offset="100%" style="stop-color:#00d4ff"/>
+        </linearGradient>
+        <linearGradient id="gg2" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#ff2d78"/>
+          <stop offset="100%" style="stop-color:#b44fff"/>
+        </linearGradient>
+      </defs>
+      <!-- Guitar Body -->
+      <ellipse cx="200" cy="330" rx="90" ry="110" fill="url(#gg)" opacity=".9"/>
+      <ellipse cx="200" cy="330" rx="55" ry="68" fill="rgba(0,0,0,.4)"/>
+      <ellipse cx="200" cy="220" rx="65" ry="80" fill="url(#gg)" opacity=".9"/>
+      <!-- Waist -->
+      <path d="M155 260 Q200 275 245 260" stroke="rgba(0,212,255,.6)" stroke-width="2" fill="none"/>
+      <!-- Neck -->
+      <rect x="185" y="60" width="30" height="165" rx="8" fill="url(#gg2)" opacity=".85"/>
+      <!-- Headstock -->
+      <ellipse cx="200" cy="55" rx="28" ry="20" fill="url(#gg2)" opacity=".85"/>
+      <!-- Strings -->
+      <line x1="195" y1="55" x2="195" y2="390" stroke="rgba(255,255,255,.3)" stroke-width="1"/>
+      <line x1="200" y1="55" x2="200" y2="390" stroke="rgba(255,255,255,.4)" stroke-width="1"/>
+      <line x1="205" y1="55" x2="205" y2="390" stroke="rgba(255,255,255,.3)" stroke-width="1"/>
+      <!-- Sound hole -->
+      <circle cx="200" cy="330" r="30" fill="none" stroke="rgba(0,212,255,.5)" stroke-width="2"/>
+      <!-- Tuning pegs -->
+      <circle cx="186" cy="40" r="5" fill="url(#gg)"/>
+      <circle cx="200" cy="38" r="5" fill="url(#gg)"/>
+      <circle cx="214" cy="40" r="5" fill="url(#gg)"/>
+      <!-- Glow dots -->
+      <circle cx="150" cy="200" r="4" fill="rgba(180,79,255,.7)">
+        <animate attributeName="opacity" values="0.7;0.1;0.7" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="260" cy="350" r="6" fill="rgba(0,212,255,.7)">
+        <animate attributeName="opacity" values="0.7;0.1;0.7" dur="2.5s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="140" cy="400" r="3" fill="rgba(255,45,120,.7)">
+        <animate attributeName="opacity" values="0.7;0.1;0.7" dur="1.8s" repeatCount="indefinite"/>
+      </circle>
+    </svg>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker" id="ticker">
+    <span>🎸 Guitars</span><span class="sep">✦</span>
+    <span>🎹 Keyboards</span><span class="sep">✦</span>
+    <span>🥁 Drum Sets</span><span class="sep">✦</span>
+    <span>🎤 Microphones</span><span class="sep">✦</span>
+    <span>🎧 Audio Equipment</span><span class="sep">✦</span>
+    <span>🎼 Harmonium & Tabla</span><span class="sep">✦</span>
+    <span>🎺 Accessories</span><span class="sep">✦</span>
+    <span>📻 Karaoke Systems</span><span class="sep">✦</span>
+    <span>🎸 Guitars</span><span class="sep">✦</span>
+    <span>🎹 Keyboards</span><span class="sep">✦</span>
+    <span>🥁 Drum Sets</span><span class="sep">✦</span>
+    <span>🎤 Microphones</span><span class="sep">✦</span>
+    <span>🎧 Audio Equipment</span><span class="sep">✦</span>
+    <span>🎼 Harmonium & Tabla</span><span class="sep">✦</span>
+    <span>🎺 Accessories</span><span class="sep">✦</span>
+    <span>📻 Karaoke Systems</span><span class="sep">✦</span>
+  </div>
+</div>
+
+<!-- PRODUCTS -->
+<section id="products">
+  <div class="section-head reveal">
+    <div class="section-tag">Our Collection</div>
+    <h2 class="section-title">Premium <span class="highlight">Instruments</span></h2>
+    <div class="divider"></div>
+    <p class="section-desc">Explore our wide range of musical instruments and audio equipment for every level — beginner to professional.</p>
+  </div>
+  <div class="cat-filters reveal">
+    <button class="cat-btn active" onclick="filterCat('all',this)">All</button>
+    <button class="cat-btn" onclick="filterCat('guitar',this)">🎸 Guitar</button>
+    <button class="cat-btn" onclick="filterCat('keyboard',this)">🎹 Keyboard</button>
+    <button class="cat-btn" onclick="filterCat('drum',this)">🥁 Drums</button>
+    <button class="cat-btn" onclick="filterCat('mic',this)">🎤 Microphones</button>
+    <button class="cat-btn" onclick="filterCat('audio',this)">🎧 Audio</button>
+    <button class="cat-btn" onclick="filterCat('classical',this)">🎼 Classical</button>
+  </div>
+  <div class="products-grid" id="productsGrid">
+    <!-- Guitar -->
+    <div class="product-card visible" data-cat="guitar">
+      <div class="product-img">🎸<div class="product-badge">Bestseller</div></div>
+      <div class="product-info">
+        <div class="product-name">Acoustic Guitar – Beginner</div>
+        <div class="product-desc">Full-size 6-string acoustic guitar, great for learners. Includes bag & picks.</div>
+        <div class="product-footer">
+          <div class="product-price">₹2,499 <small>/onwards</small></div>
+          <button class="btn-cart" onclick="addToCart('Acoustic Guitar')">+ Enquire</button>
+        </div>
+      </div>
+    </div>
+    <div class="product-card visible" data-cat="guitar">
+      <div class="product-img">🎸</div>
+      <div class="product-info">
+        <div class="product-name">Electric Guitar – Pro</div>
+        <div class="product-desc">Professional electric guitar with humbucker pickups, solid basswood body.</div>
+        <div class="product-footer">
+          <div class="product-price">₹7,999 <small>/onwards</small></div>
+          <button class="btn-cart" onclick="addToCart('Electric Guitar')">+ Enquire</button>
+        </div>
+      </div>
+    </div>
+    <!-- Keyboard -->
+    <div class="product-card visible" data-cat="keyboard">
+      <div class="product-img">🎹<div class="product-badge">Popular</div></div>
+      <div class="product-info">
+        <div class="product-name">Digital Keyboard 61-Key</div>
+        <div class="product-desc">61-key touch sensitive digital keyboard with 300+ tones and rhythms.</div>
+        <div class="product-footer">
+          <div class="product-price">₹5,499 <small>/onwards</small></div>
+          <button class="btn-cart" onclick="addToCart('Digital Keyboard')">+ Enquire</button>
+        </div>
+      </div>
+    </div>
+    <div class="product-card visible" data-cat="keyboard">
+      <div class="product-img">🎹</div>
+      <div class="product-info">
+        <div class="product-name">Electronic Organ / Piano</div>
+        <div class="product-desc">88-key weighted digital piano with authentic grand piano feel.</div>
+        <div class="product-footer">
+          <div class="product-price">₹18,999 <small>/onwards</small></div>
+          <button class="btn-cart" onclick="addToCart('Digital Piano')">+ Enquire</button>
+        </div>
+      </div>
+    </div>
+    <!-- Drum -->
+    <div class="product-card visible" data-cat="drum">
+      <div class="product-img">🥁</div>
+      <div class="product-info">
+        <div class="product-name">Acoustic Drum Kit</div>
+        <div class="product-desc">5-piece full acoustic drum set with cymbals, hardware & drum sticks.</div>
+        <div class="product-footer">
+          <div class="product-price">₹12,999 <small>/onwards</small></div>
+          <button class="btn-cart" onclick="addToCart('Drum Kit')">+ Enquire</button>
+        </div>
+      </div>
+    </div>
+    <!-- Mic -->
+    <div class="product-card visible" data-cat="mic">
+      <div class="product-img">🎤<div class="product-badge">New</div></div>
+      <div class="product-info">
+        <div class="product-name">Professional Condenser Mic</div>
+        <div class="product-desc">Studio-grade condenser microphone for recording, streaming & karaoke.</div>
+        <div class="product-footer">
+          <div class="product-price">₹3,299 <small>/onwards</small></div>
+          <button class="btn-cart" onclick="addToCart('Condenser Mic')">+ Enquire</button>
+        </div>
+      </div>
+    </div>
+    <div class="product-card visible" data-cat="mic">
+      <div class="product-img">🎤</div>
+      <div class="product-info">
+        <div class="product-name">Karaoke Wireless Mic</div>
+        <div class="product-desc">Wireless UHF microphone system with dual mics and receiver.</div>
+        <div class="product-footer">
+          <div class="product-price">₹1,899 <small>/onwards</small></div>
+          <button class="btn-cart" onclick="addToCart('Wireless Mic')">+ Enquire</button>
+        </div>
+      </div>
+    </div>
+    <!-- Audio -->
+    <div class="product-card visible" data-cat="audio">
+      <div class="product-img">🎧</div>
+      <div class="product-info">
+        <div class="product-name">PA Speaker System</div>
+        <div class="product-desc">Portable powered speaker with Bluetooth, USB & mic input for events.</div>
+        <div class="product-footer">
+          <div class="product-price">₹8,499 <small>/onwards</small></div>
+          <button class="btn-cart" onclick="addToCart('PA Speaker')">+ Enquire</button>
+        </div>
+      </div>
+    </div>
+    <div class="product-card visible" data-cat="audio">
+      <div class="product-img">📻<div class="product-badge">Hot</div></div>
+      <div class="product-info">
+        <div class="product-name">Karaoke System – Full Set</div>
+        <div class="product-desc">Complete karaoke set with amplifier, speakers, mics and song library.</div>
+        <div class="product-footer">
+          <div class="product-price">₹14,999 <small>/onwards</small></div>
+          <button class="btn-cart" onclick="addToCart('Karaoke System')">+ Enquire</button>
+        </div>
+      </div>
+    </div>
+    <!-- Classical -->
+    <div class="product-card visible" data-cat="classical">
+      <div class="product-img">🎼</div>
+      <div class="product-info">
+        <div class="product-name">Harmonium</div>
+        <div class="product-desc">High-quality harmonium with 39 keys, double reed, suitable for bhajan & classical.</div>
+        <div class="product-footer">
+          <div class="product-price">₹4,999 <small>/onwards</small></div>
+          <button class="btn-cart" onclick="addToCart('Harmonium')">+ Enquire</button>
+        </div>
+      </div>
+    </div>
+    <div class="product-card visible" data-cat="classical">
+      <div class="product-img">🥁</div>
+      <div class="product-info">
+        <div class="product-name">Tabla Set</div>
+        <div class="product-desc">Professional tabla set with fibre bayan and sheesham wood dayan, with cover bag.</div>
+        <div class="product-footer">
+          <div class="product-price">₹3,799 <small>/onwards</small></div>
+          <button class="btn-cart" onclick="addToCart('Tabla Set')">+ Enquire</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-visual">
+    <div class="about-big-icon">🎵</div>
+    <div class="about-cards-grid reveal">
+      <div class="about-card">
+        <div class="about-card-icon">🏆</div>
+        <div class="about-card-title">Trusted Shop</div>
+        <div class="about-card-text">Years of experience serving musicians in Thane</div>
+      </div>
+      <div class="about-card">
+        <div class="about-card-icon">🎯</div>
+        <div class="about-card-title">Expert Advice</div>
+        <div class="about-card-text">Knowledgeable staff to guide your purchase</div>
+      </div>
+      <div class="about-card">
+        <div class="about-card-icon">🔧</div>
+        <div class="about-card-title">Repair Service</div>
+        <div class="about-card-text">In-store instrument repair & maintenance</div>
+      </div>
+      <div class="about-card">
+        <div class="about-card-icon">💳</div>
+        <div class="about-card-title">Easy Payment</div>
+        <div class="about-card-text">Cash, UPI & card payments accepted</div>
+      </div>
+    </div>
+  </div>
+  <div class="about-text reveal">
+    <div class="section-tag">Our Story</div>
+    <h2 class="section-title">About <span class="highlight">IGC Music</span></h2>
+    <div class="divider"></div>
+    <p>Welcome to <strong>IGC The Music Shop</strong>, your go-to destination for musical instruments and audio equipment in Kalwa, Thane. Located at <strong>Sudama Nagar, Manisha Nagar</strong>, we've been serving musicians, students and music lovers with passion and expertise.</p>
+    <p>From beginners picking up their first guitar to seasoned professionals looking for studio-grade microphones and karaoke systems — we have something for everyone. Our team believes that <strong>music is for everyone</strong>, and we are here to help you find your perfect sound.</p>
+    <p>We stock hundreds of instruments from trusted brands, offer in-store repair services, and ensure a warm, welcoming experience for every customer who walks through our doors.</p>
+    <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:28px;">
+      <a href="https://wa.me/918425932304" class="btn-primary" target="_blank">📞 Call / WhatsApp</a>
+      <a href="#products" class="btn-outline">View Products</a>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-head reveal">
+    <div class="section-tag">What We Offer</div>
+    <h2 class="section-title">Our <span class="highlight">Services</span></h2>
+    <div class="divider"></div>
+    <p class="section-desc">Beyond selling instruments, we offer a range of services to support your musical journey.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <span class="service-icon">🎸</span>
+      <div class="service-title">Musical Instrument Sales</div>
+      <div class="service-desc">Wide selection of guitars, keyboards, drums, classical instruments and accessories from top brands at great prices.</div>
+    </div>
+    <div class="service-card reveal">
+      <span class="service-icon">🎤</span>
+      <div class="service-title">Microphone & Karaoke Systems</div>
+      <div class="service-desc">Professional microphones for stage, studio and home use. Complete karaoke systems for events and personal use.</div>
+    </div>
+    <div class="service-card reveal">
+      <span class="service-icon">🔧</span>
+      <div class="service-title">Instrument Repair</div>
+      <div class="service-desc">Expert repair and maintenance for guitars, keyboards and other instruments. Quick turnaround at affordable prices.</div>
+    </div>
+    <div class="service-card reveal">
+      <span class="service-icon">🎼</span>
+      <div class="service-title">Music Accessories</div>
+      <div class="service-desc">Strings, picks, stands, tuners, cables, straps, capos, bags and all essential accessories for musicians.</div>
+    </div>
+    <div class="service-card reveal">
+      <span class="service-icon">🎧</span>
+      <div class="service-title">Audio Equipment</div>
+      <div class="service-desc">PA systems, amplifiers, mixers, headphones and studio monitors for live performance and recording.</div>
+    </div>
+    <div class="service-card reveal">
+      <span class="service-icon">💡</span>
+      <div class="service-title">Expert Guidance</div>
+      <div class="service-desc">Not sure what to buy? Our team provides honest recommendations based on your skill level, budget and genre.</div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="section-head reveal">
+    <div class="section-tag">Visual Tour</div>
+    <h2 class="section-title">Our <span class="highlight">Gallery</span></h2>
+    <div class="divider"></div>
+  </div>
+  <div class="gallery-grid reveal">
+    <div class="gallery-item"><span>🎸</span><div class="caption">Guitar Collection</div></div>
+    <div class="gallery-item"><span>🎹</span><div class="caption">Keyboard Zone</div></div>
+    <div class="gallery-item"><span>🥁</span><div class="caption">Drum Section</div></div>
+    <div class="gallery-item"><span>🎤</span><div class="caption">Mic & Karaoke</div></div>
+    <div class="gallery-item"><span>🎼</span><div class="caption">Classical Corner</div></div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews">
+  <div class="section-head reveal">
+    <div class="section-tag">Customer Love</div>
+    <h2 class="section-title">What They <span class="highlight">Say</span></h2>
+    <div class="divider"></div>
+  </div>
+  <div class="reviews-grid">
+    <div class="review-card reveal">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Bought my first acoustic guitar from IGC and the staff helped me choose the perfect one for my budget. Excellent service and great prices!"</p>
+      <div class="review-author">— Rahul S., Kalwa</div>
+    </div>
+    <div class="review-card reveal">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Best music shop in Thane area! They have a huge collection of microphones and karaoke equipment. Very knowledgeable staff."</p>
+      <div class="review-author">— Priya M., Thane</div>
+    </div>
+    <div class="review-card reveal">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Got my harmonium repaired here — quick service and very affordable. IGC is the go-to place for all music needs in Kalwa."</p>
+      <div class="review-author">— Suresh P., Mumbra</div>
+    </div>
+    <div class="review-card reveal">
+      <div class="review-stars">★★★★☆</div>
+      <p class="review-text">"Great variety of drum sets and accessories. Staff was very helpful in explaining the differences between products. Highly recommend!"</p>
+      <div class="review-author">— Aditya K., Diva</div>
+    </div>
+    <div class="review-card reveal">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Purchased a PA speaker system for our event — great quality at a fair price. Delivery was smooth. Will definitely come back!"</p>
+      <div class="review-author">— Neha T., Airoli</div>
+    </div>
+    <div class="review-card reveal">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"IGC Music Shop is a hidden gem! They stock everything from sitars to electric guitars. The owner is very passionate about music."</p>
+      <div class="review-author">— Vijay D., Thane West</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" style="background:var(--dark-card2);">
+  <div class="section-head reveal">
+    <div class="section-tag">Find Us</div>
+    <h2 class="section-title">Get In <span class="highlight">Touch</span></h2>
+    <div class="divider"></div>
+  </div>
+  <div class="contact-grid">
+    <div class="reveal">
+      <div class="contact-info-item">
+        <div class="contact-icon">📍</div>
+        <div>
+          <div class="contact-label">Address</div>
+          <div class="contact-val">2, Sudama Nagar, Manisha Nagar,<br>Kalwa, Thane, Maharashtra 400605</div>
+        </div>
+      </div>
+      <div class="contact-info-item">
+        <div class="contact-icon">📞</div>
+        <div>
+          <div class="contact-label">Phone / WhatsApp</div>
+          <div class="contact-val"><a href="tel:+918425932304" style="color:var(--neon-blue);text-decoration:none;">+91 84259 32304</a></div>
+        </div>
+      </div>
+      <div class="contact-info-item">
+        <div class="contact-icon">🕐</div>
+        <div>
+          <div class="contact-label">Working Hours</div>
+          <div class="contact-val">Monday – Sunday<br><span style="color:var(--neon-blue)">10:00 AM – 9:30 PM</span></div>
+        </div>
+      </div>
+      <div class="contact-info-item">
+        <div class="contact-icon">💳</div>
+        <div>
+          <div class="contact-label">Payment Methods</div>
+          <div class="contact-val">Cash &bull; UPI &bull; Debit/Credit Cards</div>
+        </div>
+      </div>
+      <div style="margin-top:8px;">
+        <a href="https://wa.me/918425932304" class="btn-primary" target="_blank" style="display:inline-block;">💬 WhatsApp Now</a>
+      </div>
+      <div class="map-box">
+        <iframe
+          src="https://maps.google.com/maps?q=2+Sudama+Nagar+Manisha+Nagar+Kalwa+Thane+Maharashtra+400605&output=embed"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          title="IGC Music Shop Location">
+        </iframe>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="contact-form" id="contactForm">
+        <div class="form-row">
+          <div class="form-field">
+            <label>Your Name</label>
+            <input type="text" id="fname" placeholder="Rahul Sharma"/>
+          </div>
+          <div class="form-field">
+            <label>Phone Number</label>
+            <input type="tel" id="fphone" placeholder="+91 XXXXX XXXXX"/>
+          </div>
+        </div>
+        <div class="form-field">
+          <label>I'm Interested In</label>
+          <select id="finterest">
+            <option value="">Select an instrument / service…</option>
+            <option>Guitar – Acoustic / Electric</option>
+            <option>Keyboard / Piano</option>
+            <option>Drum Set</option>
+            <option>Microphone</option>
+            <option>Karaoke System</option>
+            <option>Audio Equipment / PA Speaker</option>
+            <option>Harmonium / Tabla</option>
+            <option>Instrument Repair</option>
+            <option>Other Accessories</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label>Message</label>
+          <textarea id="fmsg" placeholder="Tell us what you're looking for, your budget, or any questions…"></textarea>
+        </div>
+        <button class="btn-submit" onclick="sendEnquiry()">Send Enquiry 🚀</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo">IGC <span>🎵</span> MUSIC SHOP</div>
+      <p>Your one-stop destination for all things music. Quality instruments, professional audio equipment and expert service in Kalwa, Thane.</p>
+      <div class="footer-social">
+        <a href="https://wa.me/918425932304" class="social-btn" target="_blank" title="WhatsApp">💬</a>
+        <a href="tel:+918425932304" class="social-btn" title="Call">📞</a>
+        <a href="https://www.instagram.com/" class="social-btn" target="_blank" title="Instagram">📸</a>
+        <a href="https://www.justdial.com/" class="social-btn" target="_blank" title="JustDial">⭐</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Store Hours</h4>
+      <ul class="footer-hours">
+        <li><span>Mon–Sun</span><span>Open</span></li>
+        <li><span>Opens</span><span>10:00 AM</span></li>
+        <li><span>Closes</span><span>9:30 PM</span></li>
+      </ul>
+      <br/>
+      <h4 style="margin-top:0">Address</h4>
+      <p style="font-size:.82rem;color:var(--text-muted);line-height:1.6">2, Sudama Nagar, Manisha Nagar,<br/>Kalwa, Thane – 400605<br/>Maharashtra, India</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2024 IGC The Music Shop. All rights reserved.</p>
+    <div class="pay-methods">
+      <span class="pay-chip">💵 Cash</span>
+      <span class="pay-chip">📱 UPI</span>
+      <span class="pay-chip">💳 Card</span>
+    </div>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/918425932304?text=Hi%20IGC%20Music%20Shop!%20I%27m%20interested%20in%20your%20instruments.%20Please%20guide%20me." class="wa-float" target="_blank" title="WhatsApp">
+  💬
+  <span class="wa-tooltip">WhatsApp Order</span>
+</a>
+
+<!-- TOAST -->
+<div class="toast" id="toast">✅ Enquiry added! We'll WhatsApp you soon.</div>
+
+<script>
+  // Mobile Nav
+  function toggleMobileNav(){
+    document.getElementById('mobileNav').classList.toggle('open');
+  }
+  function closeMobileNav(){
+    document.getElementById('mobileNav').classList.remove('open');
+  }
+
+  // Scroll Reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); } });
+  }, { threshold: 0.1 });
+  revealEls.forEach(el => observer.observe(el));
+
+  // Product Filter
+  function filterCat(cat, btn){
+    document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.product-card').forEach(c => {
+      if(cat === 'all' || c.dataset.cat === cat){
+        c.classList.add('visible'); c.classList.remove('hidden');
+      } else {
+        c.classList.remove('visible'); c.classList.add('hidden');
+      }
+    });
+  }
+
+  // Toast
+  function showToast(msg){
+    const t = document.getElementById('toast');
+    t.textContent = msg; t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 3500);
+  }
+
+  // Add to Cart (WhatsApp redirect)
+  function addToCart(name){
+    const msg = encodeURIComponent('Hi IGC Music Shop! I am interested in: ' + name + '. Please provide details and pricing.');
+    window.open('https://wa.me/918425932304?text=' + msg, '_blank');
+  }
+
+  // Contact form – WhatsApp send
+  function sendEnquiry(){
+    const name = document.getElementById('fname').value.trim();
+    const phone = document.getElementById('fphone').value.trim();
+    const interest = document.getElementById('finterest').value;
+    const msg = document.getElementById('fmsg').value.trim();
+    if(!name){ showToast('⚠️ Please enter your name'); return; }
+    const wa = encodeURIComponent(
+      'Hi IGC The Music Shop!\n\nName: ' + name +
+      '\nPhone: ' + (phone||'N/A') +
+      '\nInterested In: ' + (interest||'General Enquiry') +
+      '\nMessage: ' + (msg||'Please contact me.')
+    );
+    window.open('https://wa.me/918425932304?text=' + wa, '_blank');
+    showToast('✅ Opening WhatsApp with your enquiry!');
+  }
+
+  // Navbar scroll shadow
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').style.boxShadow =
+      window.scrollY > 50 ? '0 4px 30px rgba(0,0,0,.6)' : '';
+  });
+</script>
+</body>
+</html>
